@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://master.data.ws.bduc.farmatodo.com.ve/" targetNamespace="http://master.data.ws.bduc.farmatodo.com.ve/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getAddressTypes" type="tns:getAddressTypes" />
+  <xs:element name="getAddressTypesResponse" type="tns:getAddressTypesResponse" />
+  <xs:element name="getBloodTypes" type="tns:getBloodTypes" />
+  <xs:element name="getBloodTypesResponse" type="tns:getBloodTypesResponse" />
+  <xs:element name="getCategories" type="tns:getCategories" />
+  <xs:element name="getCategoriesResponse" type="tns:getCategoriesResponse" />
+  <xs:element name="getCitiesByState" type="tns:getCitiesByState" />
+  <xs:element name="getCitiesByStateResponse" type="tns:getCitiesByStateResponse" />
+  <xs:element name="getClassesByDepartment" type="tns:getClassesByDepartment" />
+  <xs:element name="getClassesByDepartmentResponse" type="tns:getClassesByDepartmentResponse" />
+  <xs:element name="getCommunicationChannels" type="tns:getCommunicationChannels" />
+  <xs:element name="getCommunicationChannelsResponse" type="tns:getCommunicationChannelsResponse" />
+  <xs:element name="getCommunicationFrequencies" type="tns:getCommunicationFrequencies" />
+  <xs:element name="getCommunicationFrequenciesResponse" type="tns:getCommunicationFrequenciesResponse" />
+  <xs:element name="getCommunicationTopics" type="tns:getCommunicationTopics" />
+  <xs:element name="getCommunicationTopicsResponse" type="tns:getCommunicationTopicsResponse" />
+  <xs:element name="getContactTypes" type="tns:getContactTypes" />
+  <xs:element name="getContactTypesResponse" type="tns:getContactTypesResponse" />
+  <xs:element name="getCountries" type="tns:getCountries" />
+  <xs:element name="getCountriesResponse" type="tns:getCountriesResponse" />
+  <xs:element name="getDepartments" type="tns:getDepartments" />
+  <xs:element name="getDepartmentsByGroup" type="tns:getDepartmentsByGroup" />
+  <xs:element name="getDepartmentsByGroupResponse" type="tns:getDepartmentsByGroupResponse" />
+  <xs:element name="getDepartmentsResponse" type="tns:getDepartmentsResponse" />
+  <xs:element name="getDivisions" type="tns:getDivisions" />
+  <xs:element name="getDivisionsResponse" type="tns:getDivisionsResponse" />
+  <xs:element name="getEnterpriseCountries" type="tns:getEnterpriseCountries" />
+  <xs:element name="getEnterpriseCountriesResponse" type="tns:getEnterpriseCountriesResponse" />
+  <xs:element name="getGroupsByDivision" type="tns:getGroupsByDivision" />
+  <xs:element name="getGroupsByDivisionResponse" type="tns:getGroupsByDivisionResponse" />
+  <xs:element name="getImageSizesByModule" type="tns:getImageSizesByModule" />
+  <xs:element name="getImageSizesByModuleResponse" type="tns:getImageSizesByModuleResponse" />
+  <xs:element name="getImageTypesByModule" type="tns:getImageTypesByModule" />
+  <xs:element name="getImageTypesByModuleResponse" type="tns:getImageTypesByModuleResponse" />
+  <xs:element name="getMaritalStatusList" type="tns:getMaritalStatusList" />
+  <xs:element name="getMaritalStatusListResponse" type="tns:getMaritalStatusListResponse" />
+  <xs:element name="getMediaSections" type="tns:getMediaSections" />
+  <xs:element name="getMediaSectionsResponse" type="tns:getMediaSectionsResponse" />
+  <xs:element name="getOccupations" type="tns:getOccupations" />
+  <xs:element name="getOccupationsResponse" type="tns:getOccupationsResponse" />
+  <xs:element name="getPathologyList" type="tns:getPathologyList" />
+  <xs:element name="getPathologyListByType" type="tns:getPathologyListByType" />
+  <xs:element name="getPathologyListByTypeResponse" type="tns:getPathologyListByTypeResponse" />
+  <xs:element name="getPathologyListResponse" type="tns:getPathologyListResponse" />
+  <xs:element name="getPathologyTypes" type="tns:getPathologyTypes" />
+  <xs:element name="getPathologyTypesResponse" type="tns:getPathologyTypesResponse" />
+  <xs:element name="getPhoneTypes" type="tns:getPhoneTypes" />
+  <xs:element name="getPhoneTypesResponse" type="tns:getPhoneTypesResponse" />
+  <xs:element name="getServiceTypes" type="tns:getServiceTypes" />
+  <xs:element name="getServiceTypesResponse" type="tns:getServiceTypesResponse" />
+  <xs:element name="getServices" type="tns:getServices" />
+  <xs:element name="getServicesResponse" type="tns:getServicesResponse" />
+  <xs:element name="getSocialNetworkTypes" type="tns:getSocialNetworkTypes" />
+  <xs:element name="getSocialNetworkTypesResponse" type="tns:getSocialNetworkTypesResponse" />
+  <xs:element name="getSources" type="tns:getSources" />
+  <xs:element name="getSourcesResponse" type="tns:getSourcesResponse" />
+  <xs:element name="getSpecificSources" type="tns:getSpecificSources" />
+  <xs:element name="getSpecificSourcesResponse" type="tns:getSpecificSourcesResponse" />
+  <xs:element name="getStatesByCountry" type="tns:getStatesByCountry" />
+  <xs:element name="getStatesByCountryResponse" type="tns:getStatesByCountryResponse" />
+  <xs:element name="getSubclassesByClass" type="tns:getSubclassesByClass" />
+  <xs:element name="getSubclassesByClassResponse" type="tns:getSubclassesByClassResponse" />
+  <xs:element name="getTagTypes" type="tns:getTagTypes" />
+  <xs:element name="getTagTypesResponse" type="tns:getTagTypesResponse" />
+  <xs:element name="getTittles" type="tns:getTittles" />
+  <xs:element name="getTittlesResponse" type="tns:getTittlesResponse" />
+  <xs:complexType name="masterDataResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:abstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="resultList" nillable="true" type="tns:masterData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="abstractResponse" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="konySpecialValue" type="xs:string" />
+      <xs:element minOccurs="0" name="responseCode" type="tns:responseCode" />
+      <xs:element minOccurs="0" name="responseMessage" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="masterData">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generalRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:abstractRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="abstractRequest" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+      <xs:element minOccurs="0" name="paginator" type="tns:paginator" />
+      <xs:element minOccurs="0" name="source" type="tns:sourceTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="countryTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element name="enterprise" type="xs:boolean" />
+          <xs:element minOccurs="0" name="nacionality" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="paginator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="currentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="totalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sourceTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element name="inStoreInd" type="xs:boolean" />
+          <xs:element name="isTopicSubcription" type="xs:boolean" />
+          <xs:element name="mediaSource" type="xs:boolean" />
+          <xs:element name="topicSubcription" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getContactTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getContactTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSocialNetworkTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSocialNetworkTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDepartments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDepartmentsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSubclassesByClass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+      <xs:element minOccurs="0" name="arg1" type="tns:subclassTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subclassTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="classTo" type="tns:classTo" />
+          <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="classTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+          <xs:element minOccurs="0" name="department" type="tns:departmentTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="departmentTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+          <xs:element minOccurs="0" name="group" type="tns:groupTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="groupTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+          <xs:element minOccurs="0" name="division" type="tns:divisionTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="divisionTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getSubclassesByClassResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCommunicationTopics">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCommunicationTopicsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getStatesByCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getStatesByCountryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPathologyList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPathologyListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:pathologyResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pathologyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:abstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="pathologyList" nillable="true" type="tns:pathologyTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="pathologyTo">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="comments" type="xs:string" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="type" type="tns:pathologyTypeTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pathologyTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getPhoneTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPhoneTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDepartmentsByGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+      <xs:element minOccurs="0" name="arg1" type="tns:groupTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDepartmentsByGroupResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMediaSections">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMediaSectionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountries">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountriesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPathologyListByType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+      <xs:element minOccurs="0" name="arg1" type="tns:pathologyTypeTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPathologyListByTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:pathologyResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCitiesByState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+      <xs:element minOccurs="0" name="arg1" type="tns:stateTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="stateTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getCitiesByStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServiceTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServiceTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCommunicationFrequencies">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCommunicationFrequenciesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTagTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTagTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDivisions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDivisionsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getImageSizesByModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+      <xs:element minOccurs="0" name="arg1" type="tns:bducModule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getImageSizesByModuleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:imageSizeResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="imageSizeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:abstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="resultList" nillable="true" type="tns:imageSizeTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="imageSizeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="height" type="xs:int" />
+          <xs:element minOccurs="0" name="width" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getSpecificSources">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+      <xs:element minOccurs="0" name="arg1" type="tns:indicator" />
+      <xs:element minOccurs="0" name="arg2" type="tns:indicator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSpecificSourcesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:sourceResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sourceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:abstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="resultList" nillable="true" type="tns:sourceTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getTittles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTittlesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getGroupsByDivision">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+      <xs:element minOccurs="0" name="arg1" type="tns:divisionTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getGroupsByDivisionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMaritalStatusList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMaritalStatusListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSources">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSourcesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEnterpriseCountries">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEnterpriseCountriesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getClassesByDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+      <xs:element minOccurs="0" name="arg1" type="tns:departmentTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getClassesByDepartmentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAddressTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAddressTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBloodTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBloodTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServices">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServicesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serviceResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="serviceResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:abstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="resultList" nillable="true" type="tns:serviceTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="serviceTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="comments" type="xs:string" />
+          <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="images" nillable="true" type="tns:fileTo" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+          <xs:element minOccurs="0" name="serviceType" type="tns:serviceTypeTo" />
+          <xs:element minOccurs="0" name="user" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="fileTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="file" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="link" type="xs:string" />
+      <xs:element minOccurs="0" name="type" type="tns:fileType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="serviceTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getImageTypesByModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+      <xs:element minOccurs="0" name="arg1" type="tns:bducModule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getImageTypesByModuleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPathologyTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPathologyTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCommunicationChannels">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCommunicationChannelsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCategories">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCategoriesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOccupations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneralRequest" type="tns:generalRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOccupationsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:masterDataResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="responseCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INVALID_PARAMETER" />
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="PERSISTENCE_ERROR" />
+      <xs:enumeration value="GENERAL_ERROR" />
+      <xs:enumeration value="NO_RESULT" />
+      <xs:enumeration value="DUPLICATED_DATA" />
+      <xs:enumeration value="EXTERNAL_SYSTEM_ERROR" />
+      <xs:enumeration value="SECURITY_ERROR" />
+      <xs:enumeration value="DUPLICATED_EMAIL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="operationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INSERT" />
+      <xs:enumeration value="UPDATE" />
+      <xs:enumeration value="DELETE" />
+      <xs:enumeration value="SELECT" />
+      <xs:enumeration value="NA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="bducModule">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ADVERTISING" />
+      <xs:enumeration value="PROMO_BUY_GET" />
+      <xs:enumeration value="CUPONS" />
+      <xs:enumeration value="STORES" />
+      <xs:enumeration value="ITEMS" />
+      <xs:enumeration value="DISCOUNTS" />
+      <xs:enumeration value="ALL_PROMO_BUY_GET" />
+      <xs:enumeration value="ALL_PROMO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="indicator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Y" />
+      <xs:enumeration value="N" />
+      <xs:enumeration value="NA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="fileType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BIG" />
+      <xs:enumeration value="MEDIUM" />
+      <xs:enumeration value="SMALL" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

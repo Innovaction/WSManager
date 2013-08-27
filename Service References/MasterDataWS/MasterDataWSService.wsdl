@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://master.data.ws.bduc.farmatodo.com.ve/" name="MasterDataWSService" targetNamespace="http://master.data.ws.bduc.farmatodo.com.ve/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://bduct.farmatodo.com.ve:7002/BDUCWS/MasterDataWS?xsd=1" namespace="http://master.data.ws.bduc.farmatodo.com.ve/" />
+    </xsd:schema>
+  </types>
+  <message name="getAddressTypes">
+    <part name="parameters" element="tns:getAddressTypes" />
+  </message>
+  <message name="getAddressTypesResponse">
+    <part name="parameters" element="tns:getAddressTypesResponse" />
+  </message>
+  <message name="getBloodTypes">
+    <part name="parameters" element="tns:getBloodTypes" />
+  </message>
+  <message name="getBloodTypesResponse">
+    <part name="parameters" element="tns:getBloodTypesResponse" />
+  </message>
+  <message name="getContactTypes">
+    <part name="parameters" element="tns:getContactTypes" />
+  </message>
+  <message name="getContactTypesResponse">
+    <part name="parameters" element="tns:getContactTypesResponse" />
+  </message>
+  <message name="getCountries">
+    <part name="parameters" element="tns:getCountries" />
+  </message>
+  <message name="getCountriesResponse">
+    <part name="parameters" element="tns:getCountriesResponse" />
+  </message>
+  <message name="getStatesByCountry">
+    <part name="parameters" element="tns:getStatesByCountry" />
+  </message>
+  <message name="getStatesByCountryResponse">
+    <part name="parameters" element="tns:getStatesByCountryResponse" />
+  </message>
+  <message name="getCitiesByState">
+    <part name="parameters" element="tns:getCitiesByState" />
+  </message>
+  <message name="getCitiesByStateResponse">
+    <part name="parameters" element="tns:getCitiesByStateResponse" />
+  </message>
+  <message name="getMaritalStatusList">
+    <part name="parameters" element="tns:getMaritalStatusList" />
+  </message>
+  <message name="getMaritalStatusListResponse">
+    <part name="parameters" element="tns:getMaritalStatusListResponse" />
+  </message>
+  <message name="getOccupations">
+    <part name="parameters" element="tns:getOccupations" />
+  </message>
+  <message name="getOccupationsResponse">
+    <part name="parameters" element="tns:getOccupationsResponse" />
+  </message>
+  <message name="getPathologyTypes">
+    <part name="parameters" element="tns:getPathologyTypes" />
+  </message>
+  <message name="getPathologyTypesResponse">
+    <part name="parameters" element="tns:getPathologyTypesResponse" />
+  </message>
+  <message name="getPhoneTypes">
+    <part name="parameters" element="tns:getPhoneTypes" />
+  </message>
+  <message name="getPhoneTypesResponse">
+    <part name="parameters" element="tns:getPhoneTypesResponse" />
+  </message>
+  <message name="getServices">
+    <part name="parameters" element="tns:getServices" />
+  </message>
+  <message name="getServicesResponse">
+    <part name="parameters" element="tns:getServicesResponse" />
+  </message>
+  <message name="getServiceTypes">
+    <part name="parameters" element="tns:getServiceTypes" />
+  </message>
+  <message name="getServiceTypesResponse">
+    <part name="parameters" element="tns:getServiceTypesResponse" />
+  </message>
+  <message name="getSocialNetworkTypes">
+    <part name="parameters" element="tns:getSocialNetworkTypes" />
+  </message>
+  <message name="getSocialNetworkTypesResponse">
+    <part name="parameters" element="tns:getSocialNetworkTypesResponse" />
+  </message>
+  <message name="getSources">
+    <part name="parameters" element="tns:getSources" />
+  </message>
+  <message name="getSourcesResponse">
+    <part name="parameters" element="tns:getSourcesResponse" />
+  </message>
+  <message name="getTagTypes">
+    <part name="parameters" element="tns:getTagTypes" />
+  </message>
+  <message name="getTagTypesResponse">
+    <part name="parameters" element="tns:getTagTypesResponse" />
+  </message>
+  <message name="getPathologyList">
+    <part name="parameters" element="tns:getPathologyList" />
+  </message>
+  <message name="getPathologyListResponse">
+    <part name="parameters" element="tns:getPathologyListResponse" />
+  </message>
+  <message name="getPathologyListByType">
+    <part name="parameters" element="tns:getPathologyListByType" />
+  </message>
+  <message name="getPathologyListByTypeResponse">
+    <part name="parameters" element="tns:getPathologyListByTypeResponse" />
+  </message>
+  <message name="getTittles">
+    <part name="parameters" element="tns:getTittles" />
+  </message>
+  <message name="getTittlesResponse">
+    <part name="parameters" element="tns:getTittlesResponse" />
+  </message>
+  <message name="getCommunicationChannels">
+    <part name="parameters" element="tns:getCommunicationChannels" />
+  </message>
+  <message name="getCommunicationChannelsResponse">
+    <part name="parameters" element="tns:getCommunicationChannelsResponse" />
+  </message>
+  <message name="getCommunicationFrequencies">
+    <part name="parameters" element="tns:getCommunicationFrequencies" />
+  </message>
+  <message name="getCommunicationFrequenciesResponse">
+    <part name="parameters" element="tns:getCommunicationFrequenciesResponse" />
+  </message>
+  <message name="getCommunicationTopics">
+    <part name="parameters" element="tns:getCommunicationTopics" />
+  </message>
+  <message name="getCommunicationTopicsResponse">
+    <part name="parameters" element="tns:getCommunicationTopicsResponse" />
+  </message>
+  <message name="getImageSizesByModule">
+    <part name="parameters" element="tns:getImageSizesByModule" />
+  </message>
+  <message name="getImageSizesByModuleResponse">
+    <part name="parameters" element="tns:getImageSizesByModuleResponse" />
+  </message>
+  <message name="getImageTypesByModule">
+    <part name="parameters" element="tns:getImageTypesByModule" />
+  </message>
+  <message name="getImageTypesByModuleResponse">
+    <part name="parameters" element="tns:getImageTypesByModuleResponse" />
+  </message>
+  <message name="getSpecificSources">
+    <part name="parameters" element="tns:getSpecificSources" />
+  </message>
+  <message name="getSpecificSourcesResponse">
+    <part name="parameters" element="tns:getSpecificSourcesResponse" />
+  </message>
+  <message name="getEnterpriseCountries">
+    <part name="parameters" element="tns:getEnterpriseCountries" />
+  </message>
+  <message name="getEnterpriseCountriesResponse">
+    <part name="parameters" element="tns:getEnterpriseCountriesResponse" />
+  </message>
+  <message name="getDivisions">
+    <part name="parameters" element="tns:getDivisions" />
+  </message>
+  <message name="getDivisionsResponse">
+    <part name="parameters" element="tns:getDivisionsResponse" />
+  </message>
+  <message name="getGroupsByDivision">
+    <part name="parameters" element="tns:getGroupsByDivision" />
+  </message>
+  <message name="getGroupsByDivisionResponse">
+    <part name="parameters" element="tns:getGroupsByDivisionResponse" />
+  </message>
+  <message name="getDepartmentsByGroup">
+    <part name="parameters" element="tns:getDepartmentsByGroup" />
+  </message>
+  <message name="getDepartmentsByGroupResponse">
+    <part name="parameters" element="tns:getDepartmentsByGroupResponse" />
+  </message>
+  <message name="getDepartments">
+    <part name="parameters" element="tns:getDepartments" />
+  </message>
+  <message name="getDepartmentsResponse">
+    <part name="parameters" element="tns:getDepartmentsResponse" />
+  </message>
+  <message name="getClassesByDepartment">
+    <part name="parameters" element="tns:getClassesByDepartment" />
+  </message>
+  <message name="getClassesByDepartmentResponse">
+    <part name="parameters" element="tns:getClassesByDepartmentResponse" />
+  </message>
+  <message name="getSubclassesByClass">
+    <part name="parameters" element="tns:getSubclassesByClass" />
+  </message>
+  <message name="getSubclassesByClassResponse">
+    <part name="parameters" element="tns:getSubclassesByClassResponse" />
+  </message>
+  <message name="getMediaSections">
+    <part name="parameters" element="tns:getMediaSections" />
+  </message>
+  <message name="getMediaSectionsResponse">
+    <part name="parameters" element="tns:getMediaSectionsResponse" />
+  </message>
+  <message name="getCategories">
+    <part name="parameters" element="tns:getCategories" />
+  </message>
+  <message name="getCategoriesResponse">
+    <part name="parameters" element="tns:getCategoriesResponse" />
+  </message>
+  <portType name="MasterDataWS">
+    <operation name="getAddressTypes">
+      <input message="tns:getAddressTypes" />
+      <output message="tns:getAddressTypesResponse" />
+    </operation>
+    <operation name="getBloodTypes">
+      <input message="tns:getBloodTypes" />
+      <output message="tns:getBloodTypesResponse" />
+    </operation>
+    <operation name="getContactTypes">
+      <input message="tns:getContactTypes" />
+      <output message="tns:getContactTypesResponse" />
+    </operation>
+    <operation name="getCountries">
+      <input message="tns:getCountries" />
+      <output message="tns:getCountriesResponse" />
+    </operation>
+    <operation name="getStatesByCountry">
+      <input message="tns:getStatesByCountry" />
+      <output message="tns:getStatesByCountryResponse" />
+    </operation>
+    <operation name="getCitiesByState">
+      <input message="tns:getCitiesByState" />
+      <output message="tns:getCitiesByStateResponse" />
+    </operation>
+    <operation name="getMaritalStatusList">
+      <input message="tns:getMaritalStatusList" />
+      <output message="tns:getMaritalStatusListResponse" />
+    </operation>
+    <operation name="getOccupations">
+      <input message="tns:getOccupations" />
+      <output message="tns:getOccupationsResponse" />
+    </operation>
+    <operation name="getPathologyTypes">
+      <input message="tns:getPathologyTypes" />
+      <output message="tns:getPathologyTypesResponse" />
+    </operation>
+    <operation name="getPhoneTypes">
+      <input message="tns:getPhoneTypes" />
+      <output message="tns:getPhoneTypesResponse" />
+    </operation>
+    <operation name="getServices">
+      <input message="tns:getServices" />
+      <output message="tns:getServicesResponse" />
+    </operation>
+    <operation name="getServiceTypes">
+      <input message="tns:getServiceTypes" />
+      <output message="tns:getServiceTypesResponse" />
+    </operation>
+    <operation name="getSocialNetworkTypes">
+      <input message="tns:getSocialNetworkTypes" />
+      <output message="tns:getSocialNetworkTypesResponse" />
+    </operation>
+    <operation name="getSources">
+      <input message="tns:getSources" />
+      <output message="tns:getSourcesResponse" />
+    </operation>
+    <operation name="getTagTypes">
+      <input message="tns:getTagTypes" />
+      <output message="tns:getTagTypesResponse" />
+    </operation>
+    <operation name="getPathologyList">
+      <input message="tns:getPathologyList" />
+      <output message="tns:getPathologyListResponse" />
+    </operation>
+    <operation name="getPathologyListByType">
+      <input message="tns:getPathologyListByType" />
+      <output message="tns:getPathologyListByTypeResponse" />
+    </operation>
+    <operation name="getTittles">
+      <input message="tns:getTittles" />
+      <output message="tns:getTittlesResponse" />
+    </operation>
+    <operation name="getCommunicationChannels">
+      <input message="tns:getCommunicationChannels" />
+      <output message="tns:getCommunicationChannelsResponse" />
+    </operation>
+    <operation name="getCommunicationFrequencies">
+      <input message="tns:getCommunicationFrequencies" />
+      <output message="tns:getCommunicationFrequenciesResponse" />
+    </operation>
+    <operation name="getCommunicationTopics">
+      <input message="tns:getCommunicationTopics" />
+      <output message="tns:getCommunicationTopicsResponse" />
+    </operation>
+    <operation name="getImageSizesByModule">
+      <input message="tns:getImageSizesByModule" />
+      <output message="tns:getImageSizesByModuleResponse" />
+    </operation>
+    <operation name="getImageTypesByModule">
+      <input message="tns:getImageTypesByModule" />
+      <output message="tns:getImageTypesByModuleResponse" />
+    </operation>
+    <operation name="getSpecificSources">
+      <input message="tns:getSpecificSources" />
+      <output message="tns:getSpecificSourcesResponse" />
+    </operation>
+    <operation name="getEnterpriseCountries">
+      <input message="tns:getEnterpriseCountries" />
+      <output message="tns:getEnterpriseCountriesResponse" />
+    </operation>
+    <operation name="getDivisions">
+      <input message="tns:getDivisions" />
+      <output message="tns:getDivisionsResponse" />
+    </operation>
+    <operation name="getGroupsByDivision">
+      <input message="tns:getGroupsByDivision" />
+      <output message="tns:getGroupsByDivisionResponse" />
+    </operation>
+    <operation name="getDepartmentsByGroup">
+      <input message="tns:getDepartmentsByGroup" />
+      <output message="tns:getDepartmentsByGroupResponse" />
+    </operation>
+    <operation name="getDepartments">
+      <input message="tns:getDepartments" />
+      <output message="tns:getDepartmentsResponse" />
+    </operation>
+    <operation name="getClassesByDepartment">
+      <input message="tns:getClassesByDepartment" />
+      <output message="tns:getClassesByDepartmentResponse" />
+    </operation>
+    <operation name="getSubclassesByClass">
+      <input message="tns:getSubclassesByClass" />
+      <output message="tns:getSubclassesByClassResponse" />
+    </operation>
+    <operation name="getMediaSections">
+      <input message="tns:getMediaSections" />
+      <output message="tns:getMediaSectionsResponse" />
+    </operation>
+    <operation name="getCategories">
+      <input message="tns:getCategories" />
+      <output message="tns:getCategoriesResponse" />
+    </operation>
+  </portType>
+  <binding name="MasterDataWSPortBinding" type="tns:MasterDataWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getAddressTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getBloodTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getContactTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCountries">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getStatesByCountry">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCitiesByState">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMaritalStatusList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getOccupations">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPathologyTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPhoneTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getServices">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getServiceTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getSocialNetworkTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getSources">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTagTypes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPathologyList">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPathologyListByType">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTittles">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCommunicationChannels">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCommunicationFrequencies">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCommunicationTopics">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getImageSizesByModule">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getImageTypesByModule">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getSpecificSources">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getEnterpriseCountries">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDivisions">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getGroupsByDivision">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDepartmentsByGroup">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getDepartments">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getClassesByDepartment">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getSubclassesByClass">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMediaSections">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCategories">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MasterDataWSService">
+    <port name="MasterDataWSPort" binding="tns:MasterDataWSPortBinding">
+      <soap:address location="https://bduct.farmatodo.com.ve:7002/BDUCWS/MasterDataWS" />
+    </port>
+  </service>
+</definitions>

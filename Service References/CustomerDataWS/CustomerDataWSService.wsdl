@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://customer.data.ws.bduc.farmatodo.com.ve/" name="CustomerDataWSService" targetNamespace="http://customer.data.ws.bduc.farmatodo.com.ve/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://bduct.farmatodo.com.ve:7002/BDUCWS/CustomerDataWS?xsd=1" namespace="http://customer.data.ws.bduc.farmatodo.com.ve/" />
+    </xsd:schema>
+  </types>
+  <message name="searchShortCustomer">
+    <part name="parameters" element="tns:searchShortCustomer" />
+  </message>
+  <message name="searchShortCustomerResponse">
+    <part name="parameters" element="tns:searchShortCustomerResponse" />
+  </message>
+  <message name="searchCustomer">
+    <part name="parameters" element="tns:searchCustomer" />
+  </message>
+  <message name="searchCustomerResponse">
+    <part name="parameters" element="tns:searchCustomerResponse" />
+  </message>
+  <message name="insertCustomer">
+    <part name="parameters" element="tns:insertCustomer" />
+  </message>
+  <message name="insertCustomerResponse">
+    <part name="parameters" element="tns:insertCustomerResponse" />
+  </message>
+  <message name="updateCustomer">
+    <part name="parameters" element="tns:updateCustomer" />
+  </message>
+  <message name="updateCustomerResponse">
+    <part name="parameters" element="tns:updateCustomerResponse" />
+  </message>
+  <message name="validateCustomer">
+    <part name="parameters" element="tns:validateCustomer" />
+  </message>
+  <message name="validateCustomerResponse">
+    <part name="parameters" element="tns:validateCustomerResponse" />
+  </message>
+  <message name="validateLogin">
+    <part name="parameters" element="tns:validateLogin" />
+  </message>
+  <message name="validateLoginResponse">
+    <part name="parameters" element="tns:validateLoginResponse" />
+  </message>
+  <message name="validateSecurityQuestion">
+    <part name="parameters" element="tns:validateSecurityQuestion" />
+  </message>
+  <message name="validateSecurityQuestionResponse">
+    <part name="parameters" element="tns:validateSecurityQuestionResponse" />
+  </message>
+  <message name="restartPassword">
+    <part name="parameters" element="tns:restartPassword" />
+  </message>
+  <message name="restartPasswordResponse">
+    <part name="parameters" element="tns:restartPasswordResponse" />
+  </message>
+  <message name="restartNickname">
+    <part name="parameters" element="tns:restartNickname" />
+  </message>
+  <message name="restartNicknameResponse">
+    <part name="parameters" element="tns:restartNicknameResponse" />
+  </message>
+  <message name="selectCustomerChildren">
+    <part name="parameters" element="tns:selectCustomerChildren" />
+  </message>
+  <message name="selectCustomerChildrenResponse">
+    <part name="parameters" element="tns:selectCustomerChildrenResponse" />
+  </message>
+  <message name="saveCustomerChildren">
+    <part name="parameters" element="tns:saveCustomerChildren" />
+  </message>
+  <message name="saveCustomerChildrenResponse">
+    <part name="parameters" element="tns:saveCustomerChildrenResponse" />
+  </message>
+  <message name="searchCustomerCommunication">
+    <part name="parameters" element="tns:searchCustomerCommunication" />
+  </message>
+  <message name="searchCustomerCommunicationResponse">
+    <part name="parameters" element="tns:searchCustomerCommunicationResponse" />
+  </message>
+  <message name="saveCustomerCommunicationPreferences">
+    <part name="parameters" element="tns:saveCustomerCommunicationPreferences" />
+  </message>
+  <message name="saveCustomerCommunicationPreferencesResponse">
+    <part name="parameters" element="tns:saveCustomerCommunicationPreferencesResponse" />
+  </message>
+  <message name="saveCustomerFavoriteStores">
+    <part name="parameters" element="tns:saveCustomerFavoriteStores" />
+  </message>
+  <message name="saveCustomerFavoriteStoresResponse">
+    <part name="parameters" element="tns:saveCustomerFavoriteStoresResponse" />
+  </message>
+  <portType name="CustomerDataWS">
+    <operation name="searchShortCustomer">
+      <input message="tns:searchShortCustomer" />
+      <output message="tns:searchShortCustomerResponse" />
+    </operation>
+    <operation name="searchCustomer">
+      <input message="tns:searchCustomer" />
+      <output message="tns:searchCustomerResponse" />
+    </operation>
+    <operation name="insertCustomer">
+      <input message="tns:insertCustomer" />
+      <output message="tns:insertCustomerResponse" />
+    </operation>
+    <operation name="updateCustomer">
+      <input message="tns:updateCustomer" />
+      <output message="tns:updateCustomerResponse" />
+    </operation>
+    <operation name="validateCustomer">
+      <input message="tns:validateCustomer" />
+      <output message="tns:validateCustomerResponse" />
+    </operation>
+    <operation name="validateLogin">
+      <input message="tns:validateLogin" />
+      <output message="tns:validateLoginResponse" />
+    </operation>
+    <operation name="validateSecurityQuestion">
+      <input message="tns:validateSecurityQuestion" />
+      <output message="tns:validateSecurityQuestionResponse" />
+    </operation>
+    <operation name="restartPassword">
+      <input message="tns:restartPassword" />
+      <output message="tns:restartPasswordResponse" />
+    </operation>
+    <operation name="restartNickname">
+      <input message="tns:restartNickname" />
+      <output message="tns:restartNicknameResponse" />
+    </operation>
+    <operation name="selectCustomerChildren">
+      <input message="tns:selectCustomerChildren" />
+      <output message="tns:selectCustomerChildrenResponse" />
+    </operation>
+    <operation name="saveCustomerChildren">
+      <input message="tns:saveCustomerChildren" />
+      <output message="tns:saveCustomerChildrenResponse" />
+    </operation>
+    <operation name="searchCustomerCommunication">
+      <input message="tns:searchCustomerCommunication" />
+      <output message="tns:searchCustomerCommunicationResponse" />
+    </operation>
+    <operation name="saveCustomerCommunicationPreferences">
+      <input message="tns:saveCustomerCommunicationPreferences" />
+      <output message="tns:saveCustomerCommunicationPreferencesResponse" />
+    </operation>
+    <operation name="saveCustomerFavoriteStores">
+      <input message="tns:saveCustomerFavoriteStores" />
+      <output message="tns:saveCustomerFavoriteStoresResponse" />
+    </operation>
+  </portType>
+  <binding name="CustomerDataWSPortBinding" type="tns:CustomerDataWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="searchShortCustomer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="searchCustomer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertCustomer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateCustomer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="validateCustomer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="validateLogin">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="validateSecurityQuestion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="restartPassword">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="restartNickname">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="selectCustomerChildren">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saveCustomerChildren">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="searchCustomerCommunication">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saveCustomerCommunicationPreferences">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="saveCustomerFavoriteStores">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CustomerDataWSService">
+    <port name="CustomerDataWSPort" binding="tns:CustomerDataWSPortBinding">
+      <soap:address location="https://bduct.farmatodo.com.ve:7002/BDUCWS/CustomerDataWS" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://customer.data.ws.bduc.farmatodo.com.ve/" targetNamespace="http://customer.data.ws.bduc.farmatodo.com.ve/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="insertCustomer" type="tns:insertCustomer" />
+  <xs:element name="insertCustomerResponse" type="tns:insertCustomerResponse" />
+  <xs:element name="restartNickname" type="tns:restartNickname" />
+  <xs:element name="restartNicknameResponse" type="tns:restartNicknameResponse" />
+  <xs:element name="restartPassword" type="tns:restartPassword" />
+  <xs:element name="restartPasswordResponse" type="tns:restartPasswordResponse" />
+  <xs:element name="saveCustomerChildren" type="tns:saveCustomerChildren" />
+  <xs:element name="saveCustomerChildrenResponse" type="tns:saveCustomerChildrenResponse" />
+  <xs:element name="saveCustomerCommunicationPreferences" type="tns:saveCustomerCommunicationPreferences" />
+  <xs:element name="saveCustomerCommunicationPreferencesResponse" type="tns:saveCustomerCommunicationPreferencesResponse" />
+  <xs:element name="saveCustomerFavoriteStores" type="tns:saveCustomerFavoriteStores" />
+  <xs:element name="saveCustomerFavoriteStoresResponse" type="tns:saveCustomerFavoriteStoresResponse" />
+  <xs:element name="searchCustomer" type="tns:searchCustomer" />
+  <xs:element name="searchCustomerCommunication" type="tns:searchCustomerCommunication" />
+  <xs:element name="searchCustomerCommunicationResponse" type="tns:searchCustomerCommunicationResponse" />
+  <xs:element name="searchCustomerResponse" type="tns:searchCustomerResponse" />
+  <xs:element name="searchShortCustomer" type="tns:searchShortCustomer" />
+  <xs:element name="searchShortCustomerResponse" type="tns:searchShortCustomerResponse" />
+  <xs:element name="selectCustomerChildren" type="tns:selectCustomerChildren" />
+  <xs:element name="selectCustomerChildrenResponse" type="tns:selectCustomerChildrenResponse" />
+  <xs:element name="updateCustomer" type="tns:updateCustomer" />
+  <xs:element name="updateCustomerResponse" type="tns:updateCustomerResponse" />
+  <xs:element name="validateCustomer" type="tns:validateCustomer" />
+  <xs:element name="validateCustomerResponse" type="tns:validateCustomerResponse" />
+  <xs:element name="validateLogin" type="tns:validateLogin" />
+  <xs:element name="validateLoginResponse" type="tns:validateLoginResponse" />
+  <xs:element name="validateSecurityQuestion" type="tns:validateSecurityQuestion" />
+  <xs:element name="validateSecurityQuestionResponse" type="tns:validateSecurityQuestionResponse" />
+  <xs:complexType name="customerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:abstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customer" type="tns:customerTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="abstractRequest" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+      <xs:element minOccurs="0" name="paginator" type="tns:paginator" />
+      <xs:element minOccurs="0" name="source" type="tns:sourceTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customerTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="address" nillable="true" type="tns:addressTo" />
+      <xs:element minOccurs="0" name="birthDay" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="bloodType" type="tns:bloodTypeTo" />
+      <xs:element minOccurs="0" name="childQty" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="children" nillable="true" type="tns:customerChildTo" />
+      <xs:element minOccurs="0" name="communicationAllowance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="communicationPreference" type="tns:communicationPreferenceTo" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contacts" nillable="true" type="tns:contactTo" />
+      <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customerConnectStatistic" nillable="true" type="tns:customerConnectStatisticTo" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customerMailAllowance" nillable="true" type="tns:customerMailAllowanceTo" />
+      <xs:element minOccurs="0" name="customerType" type="tns:customerType" />
+      <xs:element minOccurs="0" name="fistName" type="xs:string" />
+      <xs:element minOccurs="0" name="gender" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="insertSource" type="tns:sourceTo" />
+      <xs:element minOccurs="0" name="lastLoginDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lastName" type="xs:string" />
+      <xs:element minOccurs="0" name="lastUpdateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="maritalStatus" type="tns:maritalStatusTo" />
+      <xs:element minOccurs="0" name="middleName" type="xs:string" />
+      <xs:element minOccurs="0" name="nationalId" type="xs:string" />
+      <xs:element minOccurs="0" name="nationality" type="tns:countryTo" />
+      <xs:element minOccurs="0" name="nickname" type="xs:string" />
+      <xs:element minOccurs="0" name="occupation" type="tns:occupationTo" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pathologies" nillable="true" type="tns:pathologyTo" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="phone" nillable="true" type="tns:phoneTo" />
+      <xs:element minOccurs="0" name="securityAnswer" type="xs:string" />
+      <xs:element minOccurs="0" name="securityQuestion" type="xs:string" />
+      <xs:element minOccurs="0" name="securityString" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="socialNetwork" nillable="true" type="tns:socialNetworkTo" />
+      <xs:element minOccurs="0" name="status" type="xs:string" />
+      <xs:element minOccurs="0" name="surname" type="xs:string" />
+      <xs:element minOccurs="0" name="tittle" type="tns:tittleTo" />
+      <xs:element minOccurs="0" name="updateSource" type="tns:sourceTo" />
+      <xs:element name="validated" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addressTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addressType" type="tns:addressTypeTo" />
+      <xs:element minOccurs="0" name="apartmentHome" type="xs:string" />
+      <xs:element minOccurs="0" name="buildingHome" type="xs:string" />
+      <xs:element minOccurs="0" name="city" type="tns:cityTo" />
+      <xs:element minOccurs="0" name="description1" type="xs:string" />
+      <xs:element minOccurs="0" name="description2" type="xs:string" />
+      <xs:element minOccurs="0" name="floor" type="xs:string" />
+      <xs:element minOccurs="0" name="municipality" type="xs:string" />
+      <xs:element minOccurs="0" name="neighborhood" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element name="primary" type="xs:boolean" />
+      <xs:element minOccurs="0" name="referencePoint" type="xs:string" />
+      <xs:element minOccurs="0" name="street" type="xs:string" />
+      <xs:element name="validated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="zipCode" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addressTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="masterData">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cityTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="state" type="tns:stateTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="stateTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="countryTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element name="enterprise" type="xs:boolean" />
+          <xs:element minOccurs="0" name="nacionality" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="bloodTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="customerChildTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="birthDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="customerChildNo" type="xs:int" />
+      <xs:element minOccurs="0" name="customerNo" type="xs:int" />
+      <xs:element minOccurs="0" name="gender" type="tns:gender" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="communicationPreferenceTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="channels" nillable="true" type="tns:channelTo" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="frequencies" nillable="true" type="tns:frequencyTo" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="topics" nillable="true" type="tns:topicTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="channelTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="create" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="frequencyTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="create" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="topicTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="create" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="contactTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="phone1" type="xs:string" />
+      <xs:element minOccurs="0" name="phone2" type="xs:string" />
+      <xs:element minOccurs="0" name="type" type="tns:contactTypeTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contactTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="customerConnectStatisticTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="action" type="xs:string" />
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="source" type="tns:sourceTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sourceTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element name="inStoreInd" type="xs:boolean" />
+          <xs:element name="isTopicSubcription" type="xs:boolean" />
+          <xs:element name="mediaSource" type="xs:boolean" />
+          <xs:element name="topicSubcription" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="customerMailAllowanceTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerMailAllowanceType" type="tns:customerMailAllowanceTypeTo" />
+      <xs:element name="indicator" type="xs:boolean" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customerMailAllowanceTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="maritalStatusTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="occupationTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="pathologyTo">
+    <xs:sequence>
+      <xs:element name="active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="comments" type="xs:string" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="type" type="tns:pathologyTypeTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pathologyTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="phoneTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="numberNew" type="xs:string" />
+      <xs:element minOccurs="0" name="numberOld" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="phoneType" type="tns:phoneTypeTo" />
+      <xs:element name="primary" type="xs:boolean" />
+      <xs:element name="validated" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="phoneTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="socialNetworkTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idNew" type="xs:string" />
+      <xs:element minOccurs="0" name="idOld" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element name="primary" type="xs:boolean" />
+      <xs:element minOccurs="0" name="socialNetworkType" type="tns:socialNetworkTypeTo" />
+      <xs:element name="validated" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="socialNetworkTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="tittleTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="paginator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="currentPage" type="xs:int" />
+      <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="totalPages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:abstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customer" type="tns:customerTo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="abstractResponse" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="konySpecialValue" type="xs:string" />
+      <xs:element minOccurs="0" name="responseCode" type="tns:responseCode" />
+      <xs:element minOccurs="0" name="responseMessage" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveCustomerFavoriteStores">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="arg1" type="tns:monitorStoreTo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="monitorStoreTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:storeTo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createUser" type="xs:string" />
+          <xs:element minOccurs="0" name="primary" type="xs:boolean" />
+          <xs:element minOccurs="0" name="updateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="updateUser" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="storeTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" type="tns:storeAddressTo" />
+      <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+      <xs:element minOccurs="0" name="currencyCode" type="xs:string" />
+      <xs:element minOccurs="0" name="defaultWh" type="xs:int" />
+      <xs:element minOccurs="0" name="district" type="xs:int" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="files" nillable="true" type="tns:fileTo" />
+      <xs:element minOccurs="0" name="latitude" type="xs:float" />
+      <xs:element minOccurs="0" name="linearDistance" type="xs:string" />
+      <xs:element minOccurs="0" name="longitud" type="xs:float" />
+      <xs:element minOccurs="0" name="mediaCloseDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="neighbors" nillable="true" type="tns:storeTo" />
+      <xs:element minOccurs="0" name="newStoreInd" type="xs:string" />
+      <xs:element minOccurs="0" name="open24HoursInd" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="phoneNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="schedules" nillable="true" type="tns:scheduleTo" />
+      <xs:element minOccurs="0" name="sellingSquareFt" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="services" nillable="true" type="tns:serviceTo" />
+      <xs:element minOccurs="0" name="startOrderDays" type="xs:int" />
+      <xs:element minOccurs="0" name="storeClass" type="xs:string" />
+      <xs:element minOccurs="0" name="storeCloseDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="storeDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="storeEan" type="xs:string" />
+      <xs:element minOccurs="0" name="storeFormat" type="xs:int" />
+      <xs:element minOccurs="0" name="storeMgrName" type="xs:string" />
+      <xs:element minOccurs="0" name="storeName" type="xs:string" />
+      <xs:element minOccurs="0" name="storeNo" type="xs:long" />
+      <xs:element minOccurs="0" name="storeOpenDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tags" nillable="true" type="tns:storeTagTo" />
+      <xs:element minOccurs="0" name="totalSquareFt" type="xs:int" />
+      <xs:element minOccurs="0" name="transferZone" type="xs:int" />
+      <xs:element minOccurs="0" name="userId" type="xs:string" />
+      <xs:element minOccurs="0" name="vatRegion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="storeAddressTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" type="xs:string" />
+      <xs:element minOccurs="0" name="addressCity" type="tns:cityTo" />
+      <xs:element minOccurs="0" name="addressCountry" type="tns:countryTo" />
+      <xs:element minOccurs="0" name="addressState" type="tns:stateTo" />
+      <xs:element minOccurs="0" name="mediaAddress" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fileTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="file" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="link" type="xs:string" />
+      <xs:element minOccurs="0" name="type" type="tns:fileType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="scheduleTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="close" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="day" type="tns:day" />
+      <xs:element minOccurs="0" name="open" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="serviceTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="comments" type="xs:string" />
+          <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="images" nillable="true" type="tns:fileTo" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+          <xs:element minOccurs="0" name="serviceType" type="tns:serviceTypeTo" />
+          <xs:element minOccurs="0" name="user" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="serviceTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="storeTagTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="store" type="tns:storeTo" />
+      <xs:element minOccurs="0" name="tag" type="tns:tagHeadTo" />
+      <xs:element minOccurs="0" name="userId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tagHeadTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activeInd" type="xs:string" />
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="details" nillable="true" type="tns:tagDetailTo" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="items" nillable="true" type="tns:itemTo" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="stores" nillable="true" type="tns:storeTo" />
+      <xs:element minOccurs="0" name="type" type="tns:tagTypeTo" />
+      <xs:element minOccurs="0" name="userId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tagDetailTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="head" type="tns:tagHeadTo" />
+      <xs:element minOccurs="0" name="key" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="userId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clazz" type="xs:string" />
+      <xs:element minOccurs="0" name="comments" type="xs:string" />
+      <xs:element minOccurs="0" name="country" type="tns:countryTo" />
+      <xs:element minOccurs="0" name="dept" type="xs:string" />
+      <xs:element minOccurs="0" name="discontinuedByCharInd" type="xs:string" />
+      <xs:element minOccurs="0" name="discontinuedByMedia" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="files" nillable="true" type="tns:fileTo" />
+      <xs:element minOccurs="0" name="forecastInd" type="xs:string" />
+      <xs:element minOccurs="0" name="inventoryInd" type="xs:string" />
+      <xs:element minOccurs="0" name="itemDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="itemId" type="xs:string" />
+      <xs:element minOccurs="0" name="itemLvl" type="xs:string" />
+      <xs:element minOccurs="0" name="mediaComments" type="xs:string" />
+      <xs:element minOccurs="0" name="mediaDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="merchandiseInd" type="xs:string" />
+      <xs:element minOccurs="0" name="monthMostPopularCount1" type="xs:int" />
+      <xs:element minOccurs="0" name="monthMostPopularCount2" type="xs:int" />
+      <xs:element minOccurs="0" name="newItemInd" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="orderableInd" type="xs:string" />
+      <xs:element minOccurs="0" name="resultOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="resultType" type="tns:itemSearchType" />
+      <xs:element minOccurs="0" name="sellableInd" type="xs:string" />
+      <xs:element minOccurs="0" name="shortDesc" type="xs:string" />
+      <xs:element minOccurs="0" name="simplePackInd" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:string" />
+      <xs:element minOccurs="0" name="storeOrderMult" type="xs:string" />
+      <xs:element minOccurs="0" name="subclass" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tags" nillable="true" type="tns:itemTagTo" />
+      <xs:element minOccurs="0" name="tranLvl" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="udas" nillable="true" type="tns:udaItemTo" />
+      <xs:element minOccurs="0" name="unitRetail" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="upcs" nillable="true" type="tns:itemUpcTo" />
+      <xs:element minOccurs="0" name="yearMostPopularCount1" type="xs:int" />
+      <xs:element minOccurs="0" name="yearMostPopularCount2" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemTagTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="item" type="tns:itemTo" />
+      <xs:element minOccurs="0" name="tag" type="tns:tagHeadTo" />
+      <xs:element minOccurs="0" name="userId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="udaItemTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="item" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="type" type="tns:udaItemType" />
+      <xs:element minOccurs="0" name="udaId" type="xs:string" />
+      <xs:element minOccurs="0" name="udaValue" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemUpcTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="item" type="xs:string" />
+      <xs:element minOccurs="0" name="operationType" type="tns:operationType" />
+      <xs:element minOccurs="0" name="upc" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tagTypeTo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:masterData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="activeInd" type="xs:string" />
+          <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="saveCustomerFavoriteStoresResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="restartPassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="restartPasswordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="restartNickname">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="restartNicknameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveCustomerCommunicationPreferences">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveCustomerCommunicationPreferencesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validateSecurityQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validateSecurityQuestionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="selectCustomerChildren">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="selectCustomerChildrenResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveCustomerChildren">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveCustomerChildrenResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validateCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validateCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchCustomerCommunication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchCustomerCommunicationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validateLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validateLoginResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchShortCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerRequest" type="tns:customerRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchShortCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="operationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INSERT" />
+      <xs:enumeration value="UPDATE" />
+      <xs:enumeration value="DELETE" />
+      <xs:enumeration value="SELECT" />
+      <xs:enumeration value="NA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="F" />
+      <xs:enumeration value="M" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="customerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="N" />
+      <xs:enumeration value="J" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="responseCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INVALID_PARAMETER" />
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="PERSISTENCE_ERROR" />
+      <xs:enumeration value="GENERAL_ERROR" />
+      <xs:enumeration value="NO_RESULT" />
+      <xs:enumeration value="DUPLICATED_DATA" />
+      <xs:enumeration value="EXTERNAL_SYSTEM_ERROR" />
+      <xs:enumeration value="SECURITY_ERROR" />
+      <xs:enumeration value="DUPLICATED_EMAIL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="fileType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BIG" />
+      <xs:enumeration value="MEDIUM" />
+      <xs:enumeration value="SMALL" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="day">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DOMINGO" />
+      <xs:enumeration value="LUNES" />
+      <xs:enumeration value="MARTES" />
+      <xs:enumeration value="MIERCOLES" />
+      <xs:enumeration value="JUEVES" />
+      <xs:enumeration value="VIERNES" />
+      <xs:enumeration value="SABADO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="itemSearchType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DESCRIPTION" />
+      <xs:enumeration value="TAG" />
+      <xs:enumeration value="UDA_ACTIVE_MEDICINE" />
+      <xs:enumeration value="SOUND" />
+      <xs:enumeration value="SOUND_WHEN_NO_RESULT" />
+      <xs:enumeration value="ID" />
+      <xs:enumeration value="UPC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="udaItemType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LOV" />
+      <xs:enumeration value="FF" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
