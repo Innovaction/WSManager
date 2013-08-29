@@ -17,7 +17,7 @@ namespace Innovaction
     {
        /// <summary>
        /// Para que esto funcione tiene que estar enablePasswordRetrieval="true" y passwordFormat="Encrypted". 
-       /// Los usuarios
+       /// Los usuarios   
        /// </summary>
        /// <param name="PortalID"> El portal ID donde esta el user</param>
        /// <param name="UserID"> El userID del cual queres la password</param>
@@ -151,7 +151,7 @@ namespace Innovaction
            return SearchCustomer(TheCustomer.nationalId, shortCustomer);
 
        } 
-
+         
        // estas son por una cuestion de simplificar y agilizar la programacion
        public static CustomerDataWS.customerResponse GetFullCustomer(string nationalID){
             var ToReturn = SearchCustomer(nationalID, false);

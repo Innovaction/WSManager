@@ -5398,108 +5398,6 @@ namespace Innovaction.CustomerDataWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://customer.data.ws.bduc.farmatodo.com.ve/")]
-    public partial class paginator : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int currentPageField;
-        
-        private bool currentPageFieldSpecified;
-        
-        private int pageSizeField;
-        
-        private bool pageSizeFieldSpecified;
-        
-        private int totalPagesField;
-        
-        private bool totalPagesFieldSpecified;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public int currentPage {
-            get {
-                return this.currentPageField;
-            }
-            set {
-                this.currentPageField = value;
-                this.RaisePropertyChanged("currentPage");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool currentPageSpecified {
-            get {
-                return this.currentPageFieldSpecified;
-            }
-            set {
-                this.currentPageFieldSpecified = value;
-                this.RaisePropertyChanged("currentPageSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int pageSize {
-            get {
-                return this.pageSizeField;
-            }
-            set {
-                this.pageSizeField = value;
-                this.RaisePropertyChanged("pageSize");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool pageSizeSpecified {
-            get {
-                return this.pageSizeFieldSpecified;
-            }
-            set {
-                this.pageSizeFieldSpecified = value;
-                this.RaisePropertyChanged("pageSizeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public int totalPages {
-            get {
-                return this.totalPagesField;
-            }
-            set {
-                this.totalPagesField = value;
-                this.RaisePropertyChanged("totalPages");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool totalPagesSpecified {
-            get {
-                return this.totalPagesFieldSpecified;
-            }
-            set {
-                this.totalPagesFieldSpecified = value;
-                this.RaisePropertyChanged("totalPagesSpecified");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(customerRequest))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
@@ -5509,8 +5407,6 @@ namespace Innovaction.CustomerDataWS {
     public abstract partial class abstractRequest : object, System.ComponentModel.INotifyPropertyChanged {
         
         private countryTo countryField;
-        
-        private paginator paginatorField;
         
         private sourceTo sourceField;
         
@@ -5528,18 +5424,6 @@ namespace Innovaction.CustomerDataWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public paginator paginator {
-            get {
-                return this.paginatorField;
-            }
-            set {
-                this.paginatorField = value;
-                this.RaisePropertyChanged("paginator");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public sourceTo source {
             get {
                 return this.sourceField;
