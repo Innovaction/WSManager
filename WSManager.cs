@@ -53,7 +53,7 @@ namespace Innovaction
                 string password = GetPassword(PortalID: PortalID, UserID: UserID);
                 string nickname = DotNetNuke.Entities.Users.UserController.GetUserById(userId: UserID, portalId: PortalID).Email;
                 
-                var Result = ValidateLogin(nickname,password);
+                var Result = ValidateLogin(nickname,password, PortalID);
 
                 return Result;
             }
@@ -64,7 +64,7 @@ namespace Innovaction
             }
         }
       
-       public static CustomerDataWS.customerResponse ValidateLogin(string nickname, string password)
+       public static CustomerDataWS.customerResponse ValidateLogin(string nickname, string password, int PortalID)
         {
             
             try
@@ -77,7 +77,7 @@ namespace Innovaction
 
                 ToSearch.customer = new CustomerDataWS.customerTo();
                 ToSearch.customer.country = new CustomerDataWS.countryTo();
-                ToSearch.customer.country.id = "VE";
+                ToSearch.customer.country.id = CountryID(PortalID);
 
                 ToSearch.source = new CustomerDataWS.sourceTo();
                 ToSearch.source.id = "WEB";
@@ -98,17 +98,17 @@ namespace Innovaction
         
 
        // se podrian quitar si queremos
-       public static CustomerDataWS.customerResponse SearchFullCustomer(string nationalID)
+       public static CustomerDataWS.customerResponse SearchFullCustomer(string nationalID, int PortalID)
         {
-            return SearchCustomer(nationalID, false);
+            return SearchCustomer(nationalID, PortalID, false);
         }
-       public static CustomerDataWS.customerResponse SearchShortCustomer(string nationalID)
+       public static CustomerDataWS.customerResponse SearchShortCustomer(string nationalID, int PortalID)
         {
-            return SearchCustomer(nationalID, true);
+            return SearchCustomer(nationalID, PortalID,true);
         }
         
        //core code esta en el primero
-       public static CustomerDataWS.customerResponse SearchCustomer(string nationalID, bool shortCustomer = true) {
+       public static CustomerDataWS.customerResponse SearchCustomer(string nationalID, int PortalID ,bool shortCustomer = true) {
 
             try
             {
@@ -119,7 +119,7 @@ namespace Innovaction
 
                 ToSearch.customer = new CustomerDataWS.customerTo();
                 ToSearch.customer.country = new CustomerDataWS.countryTo();
-                ToSearch.customer.country.id = "VE";
+                ToSearch.customer.country.id = CountryID(PortalID);
 
                 ToSearch.source = new CustomerDataWS.sourceTo();
                 ToSearch.source.id = "WEB";
@@ -146,15 +146,15 @@ namespace Innovaction
             }
 
         }
-       public static CustomerDataWS.customerResponse SearchCustomer(CustomerDataWS.customerTo TheCustomer, bool shortCustomer = true)
+       public static CustomerDataWS.customerResponse SearchCustomer(CustomerDataWS.customerTo TheCustomer, int PortalID,bool shortCustomer = true)
        {
-           return SearchCustomer(TheCustomer.nationalId, shortCustomer);
+           return SearchCustomer(TheCustomer.nationalId, PortalID ,shortCustomer);
 
        } 
          
        // estas son por una cuestion de simplificar y agilizar la programacion
-       public static CustomerDataWS.customerResponse GetFullCustomer(string nationalID){
-            var ToReturn = SearchCustomer(nationalID, false);
+       public static CustomerDataWS.customerResponse GetFullCustomer(string nationalID, int PortalID){
+            var ToReturn = SearchCustomer(nationalID, PortalID, false);
             return ToReturn;
         }
        //public static CustomerDataWS.customerResponse GetFullCustomer(string nickname, string password)
@@ -164,14 +164,14 @@ namespace Innovaction
         //    return GetFullCustomer(TheCustomer);
 
         //}
-       public static CustomerDataWS.customerResponse GetFullCustomer(CustomerDataWS.customerTo TheCustomer)
+       public static CustomerDataWS.customerResponse GetFullCustomer(CustomerDataWS.customerTo TheCustomer, int PortalID)
         {
-            var ToReturn = SearchCustomer(TheCustomer.nationalId, false);
+            var ToReturn = SearchCustomer(TheCustomer.nationalId, PortalID,  false);
             return ToReturn;
 
         }
 
-       public static CustomerDataWS.customerResponse UpdateCustomer(CustomerDataWS.customerTo ToUpdate)
+       public static CustomerDataWS.customerResponse UpdateCustomer(CustomerDataWS.customerTo ToUpdate, int PortalID)
        {
 
             var ToReturn = new CustomerDataWS.customerResponse();
@@ -186,7 +186,7 @@ namespace Innovaction
                 TheRequest.customer = ToUpdate;
              
                 // este id debe venir del portal id
-                TheRequest.customer.country.id = "VE";
+                TheRequest.customer.country.id = CountryID(PortalID);
                 TheRequest.source = new CustomerDataWS.sourceTo();
                 TheRequest.source.id = "WEB";
                 TheRequest.customer.customerTypeSpecified = true;
@@ -206,7 +206,7 @@ namespace Innovaction
     }
 
        
-        public static CustomerDataWS.customerTo EmptyCustomer() {
+        public static CustomerDataWS.customerTo EmptyCustomer(int PortalID) {
 
             //we generate the connection to the webservice client (ssl)
             System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
@@ -216,7 +216,7 @@ namespace Innovaction
             var ToReturn = new CustomerDataWS.customerTo();
             ToReturn.country = new CustomerDataWS.countryTo();
             // este id debe venir del portal id
-            ToReturn.country.id = "VE";
+            ToReturn.country.id = CountryID(PortalID);
            
             ToReturn.customerTypeSpecified = true;            
             ToReturn.customerType = CustomerDataWS.customerType.N;
@@ -225,6 +225,23 @@ namespace Innovaction
         
         }
 
+        public static string CountryID(int PortalID){
+            string ToReturn = "VE";
+
+            if (PortalID == 0)
+            {
+                ToReturn = "VE";
+            }
+            else if (PortalID == 1)
+            {
+                ToReturn = "CO";
+            }
+            else {
+                ToReturn = "VE";
+            }
+            return ToReturn;
+
+    }
 
         public static List<ListItem> GetMatrialStatus()
         {
@@ -247,7 +264,7 @@ namespace Innovaction
 
         }
 
-        public static List<ListItem> GetState()
+        public static List<ListItem> GetState(int PortalID)
         {
 
             List<ListItem> ToReturn = new List<ListItem>();
@@ -257,7 +274,7 @@ namespace Innovaction
             var Request = new MasterDataWS.generalRequest();
              var Country = new MasterDataWS.countryTo();
              // portal ID
-             Country.id = "VE";
+             Country.id = CountryID(PortalID);
              Request.country = Country;
 
             var StateTo = new MasterDataWS.stateTo();
